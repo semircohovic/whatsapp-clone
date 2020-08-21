@@ -4,11 +4,10 @@ import Chat from './Chat';
 import './App.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Login from './Login';
-import { Button } from '@material-ui/core'
-
+import { useStateValue } from './StateProvider'
 
 function App() {
-  const [user, setUser] = useState(null);
+  const [{ user }, dispatch] = useStateValue();
   return (
     <div className="app">
       {!user ? (
